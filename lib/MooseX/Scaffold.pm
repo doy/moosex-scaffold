@@ -255,7 +255,7 @@ sub scaffold {
         else {
             my $meta = Moose::Meta::Class->create($class_package);
             unless ($no_class_attribute) {
-                MooseX::ClassAttribute->init_meta( for_class => $class_package );
+                MooseX::ClassAttribute->import({ into => $class_package });
             }
         }
     }
